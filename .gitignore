@@ -4,4 +4,6 @@ input/
 output/
 sandbox.py
 sandbox.py.log
+.gitignore
+
 
