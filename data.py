@@ -1,5 +1,6 @@
 import zipfile
 import pandas as pd
+import os
 
 
 def unzip_data(files):
@@ -25,6 +26,7 @@ def convert_to_parquet(files):
     for file in files:
         df = pd.read_csv(file)
         df.to_parquet(file.replace(".csv", ".parquet"))
+        os.remove(file)
 
 
 convert_to_parquet(["input/content.csv",
